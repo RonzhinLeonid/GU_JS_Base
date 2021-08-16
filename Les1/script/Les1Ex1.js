@@ -1,8 +1,8 @@
-let tempC = +prompt("Укажите температуру в цельсиях:");
-if (tempC < -273) {
+const temperatureInCelcius = +prompt("Укажите температуру в цельсиях:");
+if (temperatureInCelcius < -273.15) {
     alert("Указанная температура ниже температуры абсолютного нуля.");
 }
 else {
-    let tempF = (9 / 5) * tempC + 32;
-    alert(`Температура в фаренгейтах: ${tempF}`);
+    const temperatureInFahrenheit = (9 / 5) * temperatureInCelcius + 32;
+    alert(`Температура в фаренгейтах: ${temperatureInFahrenheit}`);
 }
