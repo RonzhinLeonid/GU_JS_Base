@@ -25,5 +25,6 @@ function PrimeNumbers(n) {
     }
     return result;
 }
+
 let maxNumber = +prompt("Укажите число до которого вывести простые числа:");
 alert(PrimeNumbers(maxNumber));
