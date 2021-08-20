@@ -1,21 +1,37 @@
 function sum(x, y) {
-    return (x + y);
+    return x + y;
 }
-function dif(x, y) {
-    return (x - y);
+function diff(x, y) {
+    return x - y;
 }
 function mult(x, y) {
-    return (x * y);
+    return x * y;
 }
 function div(x, y) {
-    return (x / y);
+    return x / y;
 }
 function mathOperation(x, y, operation) {
     return operation(x, y);
 }
 
-let a = +prompt("Укажите 1ю переменную:");
-let b = +prompt("Укажите 2ю переменную:");
+function mathOperation_V2(x, y, operation) {
+    switch (operation) {
+        case "+":
+            return sum(x, y);
+        case "-":
+            return diff(x, y);
+        case "*":
+            return mult(x, y);
+        case "/":
+            return div(x, y);
+        default:
+            console.log("Неверная операция");
+            break;
+    }
+}
+
+let firstNumb = +prompt("Укажите 1ю переменную:");
+let secondNumb = +prompt("Укажите 2ю переменную:");
 let operation = prompt("Введите знак операции (+, -, *, /)");
 let action
 switch (operation) {
@@ -23,7 +39,7 @@ switch (operation) {
         action = sum;
         break;
     case "-":
-        action = dif;
+        action = diff;
         break;
     case "*":
         action = mult;
@@ -38,5 +54,7 @@ switch (operation) {
 }
 
 if (action != NaN) {
-    alert(mathOperation(a, b, action));
+    alert(mathOperation(firstNumb, secondNumb, action));
 }
+
+alert(mathOperation_V2(firstNumb, secondNumb, operation));

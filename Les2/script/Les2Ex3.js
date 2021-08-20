@@ -1,11 +1,11 @@
-let a = +prompt("Укажите 1ю переменную:");
-let b = +prompt("Укажите 2ю переменную:");
-if (a >= 0 && b >= 0) {
-    alert(a - b);
+let firstNumber = +prompt("Укажите 1ю переменную:");
+let secondNumber = +prompt("Укажите 2ю переменную:");
+if (firstNumber >= 0 && secondNumber >= 0) {
+    alert(firstNumber - secondNumber);
 }
-else if (a < 0 && b < 0) {
-    alert(a * b);
+else if (firstNumber < 0 && secondNumber < 0) {
+    alert(firstNumber * secondNumber);
 }
 else {
-    alert(a + b);
+    alert(firstNumber + secondNumber);
 }
