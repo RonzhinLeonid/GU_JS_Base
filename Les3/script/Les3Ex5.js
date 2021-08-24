@@ -1,13 +1,14 @@
+const rows = 20;
 console.log("Простой вариант:");
 let row = "";
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < rows; i++) {
     console.log(row += "*");
 }
 
 console.log("Вариант №2:");
 row = "*";
-for (let i = 0; i < 20; i++) {
-    console.log(getIndent(20 - i) + row);
+for (let i = 0; i < rows; i++) {
+    console.log(getIndent(rows - i) + row);
     row += "**";
 }
 

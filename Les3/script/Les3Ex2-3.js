@@ -7,11 +7,8 @@ let basket = [
 ];
 
 function countBasketPrice(basket) {
-    let fullPrice = 0;
-    basket.forEach((product) => {
-        fullPrice += product.price * product.amount;
-    });
-    return fullPrice;
+    return basket.reduce(function (fullPrice, product) {
+        return fullPrice + product.price * product.amount;
+    }, 0);
 }
-
 alert(`Полная стоимость товаров в корзине составляет ${countBasketPrice(basket)} у.е.`);

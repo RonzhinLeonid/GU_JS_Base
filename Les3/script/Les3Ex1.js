@@ -1,17 +1,11 @@
 function IsPrimeNumber(x) {
-    let result = true;
-    if (x > 1) {
-        for (let i = 2; i < x; i++) {
-            if (x % i == 0) {
-                result = false;
-                break;
-            }
+    if (x <= 1) return false;
+    for (let i = 2; i < x; i++) {
+        if (x % i == 0) {
+            return false;
         }
     }
-    else {
-        result = false;
-    }
-    return result;
+    return true;
 }
 
 function PrimeNumbers(n) {
