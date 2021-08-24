@@ -1,4 +1,4 @@
-function IsPrimeNumber(x) {
+function isPrimeNumber(x) {
     if (x <= 1) return false;
     for (let i = 2; i < x; i++) {
         if (x % i == 0) {
@@ -8,11 +8,11 @@ function IsPrimeNumber(x) {
     return true;
 }
 
-function PrimeNumbers(n) {
+function primeNumbers(n) {
     let result = "";
     let a = 0;
     while (a <= n) {
-        if (IsPrimeNumber(a)) {
+        if (isPrimeNumber(a)) {
             result += `${a} `;
         }
         a++;
@@ -21,4 +21,4 @@ function PrimeNumbers(n) {
 }
 
 let maxNumber = +prompt("Укажите число до которого вывести простые числа:");
-alert(PrimeNumbers(maxNumber));
+alert(primeNumbers(maxNumber));
