@@ -29,7 +29,8 @@ class LogFight {
         this.isPlayerWin = isPlayerWin;
     }
     toString() {
-        return `Игрок ${this.isPlayerWin ? "победил" : "проиграл"} ${this.enemyName} с силой ${this.enemyPower}, на клетке x:${this.position.x}, y:${this.position.y},\nСила игрока после боя стала: ${this.playerPower}`;
+        return `Игрок ${this.isPlayerWin ? "победил" : "проиграл"} ${this.enemyName} с силой ${this.enemyPower},
+        на клетке x:${this.position.x}, y:${this.position.y},\nСила игрока после боя стала: ${this.playerPower}`;
     }
 }
 
@@ -180,7 +181,6 @@ while (true) {
     }
 
     const monster = MONSTERS[gameCell];
-
 
     // сражение с монстром
     let messageOfBattle = `Вы встретили монстра ${gameCell}\n`;
