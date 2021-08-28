@@ -1,0 +1,45 @@
+.chess-board {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.chess-board-heading{
+color: brown;
+font-size: 2em;
+}
+
+.chess-board th {
+    padding: .5em;
+}
+
+.chess-board td {
+    border: 2px solid;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    font-size: 15px; 
+    line-height: 0;
+}
+
+.caption {
+    background: #eee;
+}
+
+.light {
+    background: #eee;
+}
+
+.dark {
+    background: #000;
+}
+
+.light-text {
+    color:#eee;
+    font-size: 2em;
+}
+
+.dark-text{
+    color:#000;
+    font-size: 2em;
+}
