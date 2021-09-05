@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Список функций из 7го урока с замыканием</p>
+        <ul>
+            <li>setDomTreeAttributes</li>   
+            <li>setBombermanPosition</li>  
+            <li>setEnemyPosition</li>  
+            <li>initializeGameField</li>   
+            <li>handler</li>  
+            <li>explodeBomb</li>  
+            <li>checkBombsExplosion</li>  
+            <li>startGame</li>  
+            <li>stopGame</li>  
+        </ul>
+    </div>
+
+
+if (!("a" in window)) {<br>
+    var a = 1;<br>
+}<br>
+alert(a);<br>
+т.к. js делает 2 прохода по коду в котором собирает все var, то переменная "а" будет принадлежать пространству window. Соответственно в тело цикла if мы не попадем и присвоения переменной "а" не будет. результатом alert будет undefined<br>
+<br>
+var b = function a(x) {<br>
+    x && a(--x);<br>
+};<br>
+alert(a);<br>
+будет ошибка видимости. Мы определяем функцию "а" и помещаем ее в глобоальную переменную "b", через "b" к ней и нужно обращаться<br>
+<br>
+function a(x) {<br>
+    return x * 2;<br>
+}<br>
+var a;<br>
+alert(a);<br>
+в "а" будет хранится функция. при вызове получим содержимое функции. если к "а" добавить параметр, получим результат функции<br>
+<br>
+function b(x, y, a) {<br>
+    arguments[2] = 10;<br>
+    alert(a);<br>
+}<br>
+b(1, 2, 3);<br>
+в функции происходит переназначение параметра а, в результате будет 10<br>
+<br>
+function a() {<br>
+    alert(this);<br>
+}<br>
+a.call(null);<br>
+при вызове call первый аргумент становится this для функции которую вызываем, null принадлежить пространству window<br>
+</body>
+</html>
