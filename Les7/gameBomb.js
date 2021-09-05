@@ -387,10 +387,6 @@ const addCountExplodeBomb = () => {
     countExplodeBombElement.innerHTML = countExplodeBomb;
 }
 
-const checkBombermanLive = () => {
-
-}
-
 /**
  * Обработчик на каждом тике игры
  */
@@ -400,7 +396,6 @@ const startGame = () => {
         checkBombsStart();
         checkBombsStop();
         addCountExplodeBomb();
-        checkBombermanLive();
     }, 1000 / tickPerSecond);
 };
 
