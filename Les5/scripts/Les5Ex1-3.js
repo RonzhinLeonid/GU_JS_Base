@@ -85,32 +85,34 @@ function getColorText(currentCell) {
     return COLOR_TEXT.LIGHT;
 }
 
-function getFigure(tr, figure) {
+function createFigure(tr, figure) {
     let td = tr.insertCell();
     td.className = currentCell;
+
     let div = document.createElement("div");
     div.className = getColorText(currentCell);
     div.innerHTML = figure;
+
     td.appendChild(div)
     changeCurrentCell();
 }
 
-function createCall(row, col, tr) {
+function createCellBoard(row, col, tr) {
     switch (row) {
         case 1: {
-            getFigure(tr, darkTeam[col]);
+            createFigure(tr, darkTeam[col]);
             return;
         }
         case 2: {
-            getFigure(tr, CELL_DARK_FIGURES.PAWN);
+            createFigure(tr, CELL_DARK_FIGURES.PAWN);
             return;
         }
         case 7: {
-            getFigure(tr, CELL_LIGHT_FIGURES.PAWN);
+            createFigure(tr, CELL_LIGHT_FIGURES.PAWN);
             return;
         }
         case 8: {
-            getFigure(tr, lightTeam[col]);
+            createFigure(tr, lightTeam[col]);
             return;
         }
         default: {
@@ -132,7 +134,7 @@ function createCell(row, col, tr) {
         createCellTHead(countRows - row + 1, tr);
     }
     if (row > 0 && col > 0) {
-        createCall(row, col - 1, tr);
+        createCellBoard(row, col - 1, tr);
     }
 }
 
