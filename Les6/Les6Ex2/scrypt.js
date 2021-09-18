@@ -87,11 +87,7 @@ const addProductToBacket = (event) => {
         return;
     }
 
-    if (!checkProductInBacket(products[codeProduct].name)) {
-        basket.push({ name: products[codeProduct].name, price: products[codeProduct].cost, amount: 1 });
-    } else {
-        addProductInBacket(products[codeProduct].name);
-    }
+    addProductInBacket(products[codeProduct].name, products[codeProduct].cost);
 
     const backetElement = document.querySelector(".container .basket span");
     backetElement.innerHTML = `Товаров в корзине:  ${countBasketProduct()}<br>Стоимость: ${countBasketPrice()}`;
@@ -116,11 +112,14 @@ const checkProductInBacket = (nameProduct) => {
     return false;
 }
 
-const addProductInBacket = (nameProduct) => {
-    for (let index in basket) {
-        if (basket[index].name === nameProduct) basket[index].amount += 1;
+const addProductInBacket = (nameProduct, codeProduct) => {
+    if (!checkProductInBacket(nameProduct)) {
+        basket.push({ name: nameProduct, price: codeProduct, amount: 1 });
+    } else {
+        for (let index in basket) {
+            if (basket[index].name === nameProduct) basket[index].amount += 1;
+        }
     }
-
 }
 
 createShop();
