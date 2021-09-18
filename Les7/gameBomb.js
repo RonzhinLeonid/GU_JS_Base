@@ -6,7 +6,7 @@ const bombExplositonTime = 3000;
 const bombStopTime = 1000;
 const stepWave = 250;
 
-const countEnemy = 15;
+const countEnemies = 15;
 
 const CELL_TYPE = {
     BOMBERMAN: "bomberman",
@@ -32,7 +32,7 @@ const gameState = {
         // i,j: time of start explode
     },
     gameTickHandler: null,
-    enemys: []
+    enemies: []
 };
 
 const htmlPositionAttributeName = "cell-position";
@@ -159,13 +159,13 @@ function getRandomInt(max) {
  */
 const setEnemyPosition = () => {
 
-    while (countEnemy > gameState.enemys.length) {
+    while (countEnemies > gameState.enemies.length) {
         rowNumber = getRandomInt(gameFieldHeight);
         columnNumber = getRandomInt(gameFieldWidth);
         if (gameField[rowNumber][columnNumber] !== null) continue;
 
         gameField[rowNumber][columnNumber] = CELL_TYPE.ENEMY;
-        gameState.enemys.push({ rowNumber, columnNumber });
+        gameState.enemies.push({ rowNumber, columnNumber });
 
         const startBombermanElement = getCellDomElement(rowNumber, columnNumber);
         startBombermanElement.classList.add(CELL_TYPE.ENEMY);
@@ -186,7 +186,7 @@ const stepLeft = () => {
     if (gameState.bomberman.position.columnNumber === 0) {
         setBombermanPosition(
             gameState.bomberman.position.rowNumber,
-            gameState.bomberman.position.columnNumber = gameFieldWidth - 1
+            gameFieldWidth - 1
         );
         return;
     }
@@ -201,7 +201,7 @@ const stepRight = () => {
     if (gameState.bomberman.position.columnNumber === gameFieldWidth - 1) {
         setBombermanPosition(
             gameState.bomberman.position.rowNumber,
-            gameState.bomberman.position.columnNumber = 0
+            0
         );
         return;
     }
@@ -215,7 +215,7 @@ const stepRight = () => {
 const stepUp = () => {
     if (gameState.bomberman.position.rowNumber === 0) {
         setBombermanPosition(
-            gameState.bomberman.position.rowNumber = gameFieldHeight - 1,
+            gameFieldHeight - 1,
             gameState.bomberman.position.columnNumber
         );
         return;
@@ -230,7 +230,7 @@ const stepUp = () => {
 const stepDown = () => {
     if (gameState.bomberman.position.rowNumber === gameFieldHeight - 1) {
         setBombermanPosition(
-            gameState.bomberman.position.rowNumber = 0,
+            0,
             gameState.bomberman.position.columnNumber
         );
         return;
